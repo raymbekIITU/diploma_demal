@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@411&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.25);
+    /* overflow: hidden; */
+}
+ .header a h3 {
+    color:white;
+    position: absolute;
+    right: 60px;
+    top: 10px;
+    padding:7px 20px;
+    border-radius: 20px;
+    border: none;
+    /* background-color: Transparent; */
+    font-size: 20px;
+    text-decoration: none;
+    font-family: cursive;
+}
+
+.header a h3:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.header a h2 {
+    position: absolute;
+    color: white;
+    bottom: 15px;
+    left: 10px;
+    top: 10px;
+    font-family: cursive;
+}
+
+
+
+.navigation {
+    margin-top: 60px;
+    margin-right: 260px;
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    /* transition: 0.5s; */
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* .navigation:hover,
+.navigation.active {
+    width: 250px;
+} */
+
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.navigation ul li:hover {
+    background:darkseagreen;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon .fas,
+.navigation ul li a .icon .far {
+    font-size: 24px;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+    font-size:large;
+    font-family: cursive;
+}
+
+.toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.25);;
+    cursor: pointer;
+}
+
+.toggle:active {
+    background: red;
+}
+
+.toggle:before {
+    content: "\f0c9";
+    font-family: fontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+}
+
+.toggle:active:before {
+    content: "\f00d";
+}
+
+#videoBG {
+    position: fixed;
+    z-index: -1;
+    width:100%;
+    height: auto;
+}
+
+.container {
+    position: absolute;
+    top: 80px;
+    left: 270px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 300px;
+    text-align: center;
+}
+
+.container .imgBx {
+    position: relative;
+    width: 100%;
+    height: 250px;
+}
+
+.container .imgBx img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container audio {
+    width: 100%;
+    outline: none;
+}
+
+
+
+img {
+    width: 180px;
+    height: 220px;
+}
+
+.col-md-3 {
+    /* margin-left: 260px; */
+    margin-top: 70px;
+    /* margin-bottom: 40px; */
+    float: left;
+    margin-left: 260px;
+}
+
+.album-poster {
+    position: relative;
+    display: block;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 0 0 0 #3d2173a1;
+    transition: all ease 0.4s;
+}
+
+.album-poster:hover {
+    box-shadow: none;
+    transform: scale(0.98) translateY(5px);
+}
+
+p{
+    font-size: 15px;
+}
+h4{
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+/*default is hide music player*/
+#aplayer{
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    box-shadow: 0 -2px 2px #dadada;
+    background-color: #fff;
+    transition: all ease 0.5s;
+}
+#aplayer.showPlayer{
+    bottom: 0;
+}
+
+/*MUSIC PLAYER CUSTOMIZING STYLE*/
+/* span{
+    color: #000 !important;
+    font-size: 16px;
+} */
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded{
+    background: #e0e0e0;
+    height: 4px;
+}
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played{
+    height: 4px;
+    background-color: #2196F3 !important;
+}
+.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb{
+    background-color: #2196F3 !important;
+}
+
+.aplayer .aplayer-icon{
+    width: 20px;
+    height: 20px;
+}
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+    fill: #000;
+}
+.aplayer .aplayer-info .aplayer-music{
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 767px) {
+    .navigation {
+        left: -250px;
+    }
+    .navigation.active {
+        left: 0;
+        width: 100%;
+    }
+
+}
+
+@media (min-aspect-ratio: 16/9) {
+    #videoBG {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    #videoBG {
+        width: auto;
+        height: 100%;
+    }
+}
+
+/* Responsive columns */
+/* @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+} */

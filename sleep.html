@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+    <title>Demal</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyB4abFcxu9I48iUIHiKm5V_81wp3p1xMXQ",
+            authDomain: "demal-2242f.firebaseapp.com",
+            databaseURL: "https://demal-2242f.firebaseio.com",
+            projectId: "demal-2242f",
+            storageBucket: "demal-2242f.appspot.com",
+            messagingSenderId: "830446498789",
+            appId: "1:830446498789:web:b321d2f615395bd0b0750c",
+            measurementId: "G-VWG683QVVM"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
+
+
+    <div class="header">
+        <a href="index.html"><h2>Demal</h2></a>
+        <a href="#login"><h3>Логин</h3></a>
+    </div>
+
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span class="title">Главная</span>
+                </a>
+            </li>
+            <li>
+                <a href="sleep.html">
+                    <span class="icon"><i class="far fa-moon"></i></span>
+                    <span class="title">Сон</span>
+                </a>
+            </li>
+            <li>
+                <a href="meditation.html">
+                    <span class="icon"><i class="far fa-circle"></i></span>
+                    <span class="title">Медитация</span>
+                </a>
+            </li>
+            <li>
+                <a href="music.html">
+                    <span class="icon"><i class="fas fa-music"></i></span>
+                    <span class="title">Музыка</span>
+                </a>
+            </li>
+            <li>
+                <a href="scene.html">
+                    <span class="icon"><i class="fas fa-mountain"></i></span>
+                    <span class="title">Сцены</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="far fa-user-circle"></i></span>
+                    <span class="title">Профиль</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <video id="videoBG" autoplay muted loop>
+        <source src="bg_video/170724_15_Setangibeach.mp4" type="video/mp4">
+    </video>
+<!--
+    <div class="sleep_content">
+        <div class="container">
+            <img src="card_photo/nature.jpg" alt="Avatar">
+            <h4><b>AUTHOR OF SLEEP STORY</b></h4>
+        </div>
+    </div> -->
+    <div class="row">
+    <!-- <div class="col-md-3">
+        <a href="javascript:void();" class="album-poster" data-switch="0">
+            <img src="https://images.pexels.com/photos/1699161/pexels-photo-1699161.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+        </a>
+        <h4>Lorem ipsum</h4>
+        <p>lorem ipsum - 2010</p>
+    </div>
+    <div class="col-md-3">
+        <a href="#" class="album-poster" data-switch="1">
+            <img src="https://images.pexels.com/photos/838702/pexels-photo-838702.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">        </a>
+        </a>
+        <h4>Repellat illo</h4>
+        <p>Lorem ipsum dolor sit ame - 2020</p>
+    </div>
+    <div class="col-md-3">
+        <a href="#" class="album-poster" data-switch="2">
+            <img src="https://images.pexels.com/photos/894156/pexels-photo-894156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+        </a>
+        <h4>adipisicing elit</h4>
+        <p>Porro distinctio fuga - 2020</p>
+    </div> -->
+
+    <div class="col-md-3">
+        <a href="#" class="album-poster" data-switch="3">
+            <img src="https://images.pexels.com/photos/2118046/pexels-photo-2118046.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">        </a>
+        </a>
+        <h4>Atque ab</h4>
+        <p>Harum nam unde digniss - 2020</p>
+    </div>
+    </div>
+
+    <div class="toggle" onclick="toggleMenu()"></div>
+    <script>
+        function toggleMenu() {
+            let navigation = document.querySelector(".navigation");
+
+            let toggle = document.querySelector(".toggle");
+            navigation.classList.toggle("active");
+
+            toggle.classList.toggle("active");
+        }
+    </script>
+
+    <div id="aplayer"></div>
+
+    <!-- Jquery Link -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <!-- Bootstrap Link -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- APlayer Jquery link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+    <!-- Font awesome   -->
+    <script src="https://kit.fontawesome.com/baab7691f8.js" crossorigin="anonymous"></script>
+
+    <script>
+        // NOW I CLICK album-poster TO GET CURRENT SONG ID
+        $(".album-poster").on('click', function(e) {
+            var dataSwitchId = $(this).attr('data-switch');
+            //console.log(dataSwitchId);
+
+            // and now i use aplayer switch function see
+            ap.list.switch(dataSwitchId); //this is static id but i use dynamic
+
+            // aplayer play function
+            // when i click any song to play
+            ap.play();
+
+            // click to slideUp player see
+            $("#aplayer").addClass('showPlayer');
+        });
+
+        var sleep = firebase.database().ref("AudioFiles/-MJfrapJBKLwO2qIfU3y/audioUrl");
+        const audio = [
+        {
+		        name: 'Invisible Beauty',
+		        artist: 'Artist Name',
+		        url: 'source/invisible_beauty.mp3',
+		        cover: 'https://images.pexels.com/photos/1699161/pexels-photo-1699161.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+		    },
+			{
+		        name: 'Just Stay',  // SONG NAME
+		        artist: 'Artist Name', //ARTIST NAME
+		        url: 'source/just_stay.mp3', // PATH NAME AND SONG URL
+		        cover: 'https://images.pexels.com/photos/838702/pexels-photo-838702.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500' // COVER IMAGE
+		    },
+			{
+				name: 'Liquid Time',
+				artist: 'Artist Name',
+				url: 'source/liquid_time.mp3',
+				cover: 'https://images.pexels.com/photos/838696/pexels-photo-838696.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+			},
+			{
+				name: 'Silky Smooth',
+				artist: 'Artist Name',
+				// url: 'source/silky_smooth.mp3',
+                url: '',
+				cover: 'https://images.pexels.com/photos/1370545/pexels-photo-1370545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+			},
+        ];
+        // alert(val);
+        sleep.on("value", function(snapshot) {
+            console.log(snapshot.val());
+            audio[3].url = snapshot.val();
+
+            // alert(snapshot.val());
+            // const audio = document.querySelector(".audio");
+            // audio.load();
+        }, function (error) {
+            // console.log("Error: " + error.code);
+            alert("Error: " + error.code);
+        });
+
+
+
+        const ap = new APlayer({
+		    container: document.getElementById('aplayer'),
+		    listFolded: true,
+		    audio: audio
+		});
+
+
+	</script>
+
+
+    <script type="text/javascript" src="js/Read.js"></script>
+
+
+</body>
+</html>

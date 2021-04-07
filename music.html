@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"><h2>Demal</h2></a>
+        <a href="#login"><h3>Логин</h3></a>
+    </div>
+
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span class="title">Главная</span>
+                </a>
+            </li>
+            <li>
+                <a href="sleep.html">
+                    <span class="icon"><i class="far fa-moon"></i></span>
+                    <span class="title">Сон</span>
+                </a>
+            </li>
+            <li>
+                <a href="meditation.html">
+                    <span class="icon"><i class="far fa-circle"></i></span>
+                    <span class="title">Медитация</span>
+                </a>
+            </li>
+            <li>
+                <a href="music.html">
+                    <span class="icon"><i class="fas fa-music"></i></span>
+                    <span class="title">Музыка</span>
+                </a>
+            </li>
+            <li>
+                <a href="scene.html">
+                    <span class="icon"><i class="fas fa-mountain"></i></span>
+                    <span class="title">Сцены</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="far fa-user-circle"></i></span>
+                    <span class="title">Профиль</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="toggle" onclick="toggleMenu()"></div>
+    <script>
+        function toggleMenu() {
+            let navigation = document.querySelector(".navigation");
+            let toggle = document.querySelector(".toggle");
+            navigation.classList.toggle("active");
+            toggle.classList.toggle("active");
+        }
+    </script>
+
+    <video id="videoBG" autoplay muted loop>
+        <source src="bg_video/170724_15_Setangibeach.mp4" type="video/mp4">
+    </video>
+<!--
+    <div class="sleep_content">
+        <div class="container">
+            <img src="card_photo/nature.jpg" alt="Avatar">
+            <h4><b>SOME MUSIC</b></h4>
+        </div>
+    </div> -->
+
+
+
+
+    <!-- Font awesome   -->
+    <script src="https://kit.fontawesome.com/baab7691f8.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
