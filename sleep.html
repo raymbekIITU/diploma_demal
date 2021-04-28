@@ -15,6 +15,8 @@
 
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -123,7 +125,7 @@
 
     <div class="col-md-3">
         <a href="#" class="album-poster" data-switch="3">
-            <img src="https://images.pexels.com/photos/2118046/pexels-photo-2118046.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">        </a>
+            <img src="https://firebasestorage.googleapis.com/v0/b/demal-2242f.appspot.com/o/BackgroundImages%2Fbackground1.jpg?alt=media&token=c723fdcf-6c96-45d6-aebe-15bd00954098" alt="">        </a>
         </a>
         <h4>Atque ab</h4>
         <p>Harum nam unde digniss - 2020</p>
@@ -172,8 +174,8 @@
             $("#aplayer").addClass('showPlayer');
         });
 
-        var sleep = firebase.database().ref("AudioFiles/-MJfrapJBKLwO2qIfU3y/audioUrl");
-        const audio = [
+        // var sleep = firebase.database().ref("AudioFiles/-MJfrapJBKLwO2qIfU3y/audioUrl");
+        const audio_list = [
         {
 		        name: 'Invisible Beauty',
 		        artist: 'Artist Name',
@@ -198,27 +200,28 @@
 				// url: 'source/silky_smooth.mp3',
                 url: '',
 				cover: 'https://images.pexels.com/photos/1370545/pexels-photo-1370545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-			},
+			}
         ];
-        // alert(val);
-        sleep.on("value", function(snapshot) {
-            console.log(snapshot.val());
-            audio[3].url = snapshot.val();
+       var sleeps = audio_list;
 
-            // alert(snapshot.val());
-            // const audio = document.querySelector(".audio");
-            // audio.load();
-        }, function (error) {
-            // console.log("Error: " + error.code);
-            alert("Error: " + error.code);
-        });
+
+        var db = firebase.firestore();
+
+        db.collection("meditations")
+        .doc("rXDLCItJsa0EWZXWak0O")
+        .get()
+        .then(doc => {
+            var audio_url = doc.get('audioUrl');
+            sleeps[3].url = audio_url;
+        })
+
 
 
 
         const ap = new APlayer({
 		    container: document.getElementById('aplayer'),
 		    listFolded: true,
-		    audio: audio
+		    audio: audio_list
 		});
 
 

@@ -13,7 +13,8 @@
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
-
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
         <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
@@ -109,7 +110,7 @@
             </audio>
 
 
-        <script>
+        <!-- <script>
                 var meditation = firebase.database().ref("AudioFiles/-MJfrapJBKLwO2qIfU3y/audioUrl");
                 // alert(val);
                 meditation.on("value", function(snapshot) {
@@ -124,7 +125,54 @@
                     // console.log("Error: " + error.code);
                     alert("Error: " + error.code);
                 });
+        </script> -->
+
+        <script>
+            var db = firebase.firestore();
+
+            db.collection("meditations")
+            .doc("rXDLCItJsa0EWZXWak0O")
+            .get()
+            .then(doc => {
+                console.log(doc.data())
+                var audio_url = doc.get('audioUrl');
+                console.log(audio_url);
+                // const storage = firebase.storage();
+                // storage.refFromURL(audio_url).getDownloadURL()
+                // .then((url) => { // Do something with the URL ... })
+                //     // alert(url);
+                //     // alert("Hello");
+                const meditate = document.querySelector(".meditate");
+                meditate.src = audio_url;
+                const audio = document.querySelector(".audio");
+                audio.load();
+                // })
+
+            })
+
+
+        //     const storage = firebase.storage();
+        //     storage.refFromURL("gs://demal-2242f.appspot.com/BackgroundMusic/Crickets-rain-and-thunder-relaxing-nature-sounds.mp3").getDownloadURL()
+        //     .then((url) => { // Do something with the URL ... })
+        //         alert(url);
+        //         alert("Hello");
+        //     })
+
+        // // Create a reference with an initial file path and name
+        // var storage = firebase.storage();
+
+        // // Create a reference from a Google Cloud Storage URI
+        // var gsReference = storage.refFromURL('gs://bucket/images/stars.jpg');
+
+        // gsReference.child('images/stars.jpg').getDownloadURL()
+        // .then((url) => {
+
+        // })
+        // .catch((error) => {
+        //     // Handle any errors
+        // });
         </script>
+
 
 
 

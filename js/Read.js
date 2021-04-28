@@ -1,5 +1,5 @@
 
-console.log(firebase);
+// console.log(firebase);
 
 // var ref = firebase.database().ref("AudioFiles/-MJfrapJBKLwO2qIfU3y/audioUrl");
 
@@ -10,11 +10,13 @@ console.log(firebase);
 // });
 
 
-const db = firebase.firestore();
+// var db = firebase.firestore();
 
-db.collection("meditations")
-.doc("rXDLCItJsa0EWZXWak0O")
-.get()
-.then(doc => {
-    console.log(doc.data())
-})
+// db.collection("meditations")
+// .doc("rXDLCItJsa0EWZXWak0O")
+// .get()
+// .then(doc => {
+//     console.log(doc.data())
+//     var audio_url = doc.get('audioUrl');
+//     console.log(audio_url);
+// })
