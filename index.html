@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demal</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      async
+      src="https://kit.fontawesome.com/baab7691f8.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="header">
       <a href="index.html"><h2>Demal</h2></a>
       <a href="#login"><h3>Логин</h3></a>
     </div>
-
     <div class="navigation">
       <ul>
         <li>
@@ -54,25 +58,8 @@
     </div>
 
     <div class="toggle" onclick="toggleMenu()"></div>
-    <script>
-      function toggleMenu() {
-        let navigation = document.querySelector(".navigation");
-        let toggle = document.querySelector(".toggle");
-        navigation.classList.toggle("active");
-        toggle.classList.toggle("active");
-      }
-    </script>
-
-    <!-- TODO: Popular audios -->
-
     <video id="videoBG" autoplay muted loop>
       <source src="bg_video/170724_15_Setangibeach.mp4" type="video/mp4" />
     </video>
-
-    <!-- Font awesome   -->
-    <script
-      src="https://kit.fontawesome.com/baab7691f8.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

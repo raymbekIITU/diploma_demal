@@ -5,39 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demal</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+    <script
+      src="https://kit.fontawesome.com/baab7691f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./js/firebase.js"></script>
+  </head>
 
-    <script>
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      var firebaseConfig = {
-        apiKey: "AIzaSyB4abFcxu9I48iUIHiKm5V_81wp3p1xMXQ",
-        authDomain: "demal-2242f.firebaseapp.com",
-        databaseURL: "https://demal-2242f.firebaseio.com",
-        projectId: "demal-2242f",
-        storageBucket: "demal-2242f.appspot.com",
-        messagingSenderId: "830446498789",
-        appId: "1:830446498789:web:b321d2f615395bd0b0750c",
-        measurementId: "G-VWG683QVVM",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
-
+  <body>
     <div class="header">
       <a href="index.html"><h2>Demal</h2></a>
       <a href="#login"><h3>Логин</h3></a>
     </div>
-
     <div class="navigation">
       <ul>
         <li>
@@ -80,15 +64,6 @@
     </div>
 
     <div class="toggle" onclick="toggleMenu()"></div>
-    <script>
-      function toggleMenu() {
-        let navigation = document.querySelector(".navigation");
-        let toggle = document.querySelector(".toggle");
-        navigation.classList.toggle("active");
-        toggle.classList.toggle("active");
-      }
-    </script>
-
     <video id="videoBG" autoplay muted loop>
       <source src="bg_video/170724_15_Setangibeach.mp4" type="video/mp4" />
     </video>
@@ -96,43 +71,11 @@
     <div class="container">
       <div class="imgBx">
         <img src="card_photo/nature.jpg" alt="Avatar" />
-        <!-- <h4><b>AUTHOR OF MEDIDATION</b></h4> -->
       </div>
 
       <audio class="audio" controls="controls">
         <source class="meditate" src="" type="audio/mp3" />
       </audio>
-
-      <script>
-        var meditation = firebase
-          .database()
-          .ref("AudioFiles/-MJfrapJBKLwO2qIfU3y/audioUrl");
-        // alert(val);
-        meditation.on(
-          "value",
-          function (snapshot) {
-            // console.log(snapshot.val());
-            // alert(snapshot.val());
-            const meditate = document.querySelector(".meditate");
-            meditate.src = snapshot.val();
-            console.log(meditate);
-            const audio = document.querySelector(".audio");
-            audio.load();
-          },
-          function (error) {
-            // console.log("Error: " + error.code);
-            alert("Error: " + error.code);
-          }
-        );
-      </script>
     </div>
-
-    <!-- Font awesome   -->
-    <script
-      src="https://kit.fontawesome.com/baab7691f8.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <script type="text/javascript" src="js/Read.js"></script>
   </body>
 </html>
