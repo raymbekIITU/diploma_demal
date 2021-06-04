@@ -3,20 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
     <title>Demal</title>
     <link rel="stylesheet" href="style.css" />
-    <script
-      async
-      src="https://kit.fontawesome.com/baab7691f8.js"
-      crossorigin="anonymous"
-    ></script>
+    <script async src="https://kit.fontawesome.com/baab7691f8.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+    <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script  src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script  src="./js/index.js"></script>
+    <script defer src="./js/firebase.js"></script>
+    <script defer src="./js/aplayer.js"></script>
+    <script defer src="./js/scene_firebase.js"></script>
+    <script defer src="./js/bg_audio.js"></script>
+
   </head>
   <body>
     <div class="header">
       <a href="index.html"><h2>Demal</h2></a>
       <a href="#login"><h3>Логин</h3></a>
+      <div class="toggle" onclick="toggleMenu()"></div>
     </div>
-
     <div class="navigation">
       <ul>
         <li>
@@ -58,25 +72,127 @@
       </ul>
     </div>
 
-    <div class="toggle" onclick="toggleMenu()"></div>
-    <script>
-      function toggleMenu() {
-        let navigation = document.querySelector(".navigation");
-        let toggle = document.querySelector(".toggle");
-        navigation.classList.toggle("active");
-        toggle.classList.toggle("active");
-      }
-    </script>
 
-    <video id="videoBG" autoplay muted loop>
+    <video id="bg_scene" autoplay muted loop>
       <source src="bg_video/170724_15_Setangibeach.mp4" type="video/mp4" />
     </video>
-    <!--
-    <div class="sleep_content">
-        <div class="container">
-            <img src="card_photo/nature.jpg" alt="Avatar">
-            <h4><b>SOME BACKGROUND SCENE</b></h4>
-        </div>
-    </div> -->
+
+    <div class="container-fluid">
+      <div class="row" style="margin-left: 260px;">
+          <div class="col-md-3">
+              <div class="scene-poster" data-switch="0">
+                  <img src="">
+              </div>
+              <div class="scene-description">
+                  <h4></h4>
+
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="scene-poster" data-switch="1">
+                  <img src="">
+              </div>
+              <div class="scene-description">
+                  <h4></h4>
+
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="scene-poster" data-switch="2">
+                  <img src="">
+              </div>
+              <div class="scene-description">
+                  <h4></h4>
+
+              </div>
+          </div>
+
+          <div class="col-md-3">
+              <div class="scene-poster" data-switch="3">
+                  <img src="">
+              </div>
+              <div class="scene-description">
+                  <h4></h4>
+
+              </div>
+          </div>
+
+
+      <div class="col-md-3">
+          <div class="scene-poster" data-switch="4">
+              <img src="">
+          </div>
+          <div class="scene-description">
+              <h4></h4>
+
+          </div>
+      </div>
+      <div class="col-md-3">
+          <div class="scene-poster" data-switch="5">
+              <img src="">
+          </div>
+          <div class="scene-description">
+              <h4></h4>
+
+          </div>
+      </div>
+      <div class="col-md-3">
+          <div class="scene-poster" data-switch="6">
+              <img src="">
+          </div>
+          <div class="scene-description">
+              <h4></h4>
+
+          </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="scene-poster" data-switch="7">
+              <img src="">
+          </div>
+          <div class="scene-description">
+              <h4></h4>
+
+          </div>
+      </div>
+      <div class="col-md-3">
+          <div class="scene-poster" data-switch="8">
+              <img src="">
+          </div>
+          <div class="scene-description">
+              <h4></h4>
+
+          </div>
+      </div>
+      <div class="col-md-3">
+          <div class="scene-poster" data-switch="9">
+              <img src="">
+          </div>
+          <div class="scene-description">
+              <h4></h4>
+
+          </div>
+      </div>
+      <div class="col-md-3">
+          <div class="scene-poster" data-switch="10">
+              <img src="">
+          </div>
+          <div class="scene-description">
+              <h4></h4>
+
+          </div>
+      </div>
+      <div class="col-md-3">
+          <div class="scene-poster" data-switch="11">
+              <img src="">
+          </div>
+          <div class="scene-description">
+              <h4></h4>
+
+          </div>
+      </div>
+      </div>
+    </div>
+
   </body>
 </html>

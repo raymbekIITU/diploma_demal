@@ -9,25 +9,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
     <title>Demal</title>
     <link rel="stylesheet" href="style.css">
-    
+
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
     <script  src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script  src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
     <script   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script  src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script  src="./js/index.js"></script>
     <script defer src="./js/firebase.js"></script>
     <script defer src="./js/aplayer.js"></script>
+    <script defer src="./js/sleep_firebase.js"></script>
     <script  src="https://kit.fontawesome.com/baab7691f8.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="header">
         <a href="index.html"><h2>Demal</h2></a>
         <a href="#login"><h3>Логин</h3></a>
+        <div class="toggle" onclick="toggleMenu()"></div>
     </div>
-    <div class="navigation"> 
+    <div class="navigation">
         <ul>
             <li>
                 <a href="index.html">
@@ -66,50 +69,136 @@
                 </a>
             </li>
         </ul>
-    </div>  
-    <video id="videoBG" autoplay muted loop>
+    </div>
+    <video id="bg_sleep" autoplay muted loop>
         <source src="bg_video/170724_15_Setangibeach.mp4" type="video/mp4">
     </video>
     <div class="container-fluid">
         <div class="row" style="margin-left: 260px;">
             <div class="col-md-3">
-                <a href="javascript:void()" class="album-poster" data-switch="0">
-                    <img src="https://images.pexels.com/photos/1699161/pexels-photo-1699161.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-                </a>
-                
-                <div style="background-color: rgba(0, 0, 0, 0.3);">
-                    <h4 style="margin-top: 0;">Lorem ipsum</h4>
-                    <p>lorem ipsum - 2010</p>
+                <div class="sleep-poster" data-switch="0">
+                    <img src="">
+                </div>
+                <div class="sleep-description">
+                    <h4></h4>
+                    <p></p>
                 </div>
             </div>
             <div class="col-md-3">
-                <a href="#" class="album-poster" data-switch="1">
-                    <img src="https://images.pexels.com/photos/838702/pexels-photo-838702.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">        </a>
-                </a>
-                <h4>Repellat illo</h4>
-                <p>Lorem ipsum dolor sit ame - 2020</p>
+                <div class="sleep-poster" data-switch="1">
+                    <img src="">
+                </div>
+                <div class="sleep-description">
+                    <h4></h4>
+                    <p></p>
+                </div>
             </div>
             <div class="col-md-3">
-                <a href="#" class="album-poster" data-switch="2">
-                    <img src="https://images.pexels.com/photos/894156/pexels-photo-894156.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-                </a>
-                <h4>adipisicing elit</h4>
-                <p>Porro distinctio fuga - 2020</p>
+                <div class="sleep-poster" data-switch="2">
+                    <img src="">
+                </div>
+                <div class="sleep-description">
+                    <h4></h4>
+                    <p></p>
+                </div>
             </div>
-            
+
             <div class="col-md-3">
-                <a href="#" class="album-poster" data-switch="3">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/demal-2242f.appspot.com/o/BackgroundImages%2Fbackground1.jpg?alt=media&token=c723fdcf-6c96-45d6-aebe-15bd00954098" alt="">        </a>
-                </a>
-                <h4>Atque ab</h4>
-                <p>Harum nam unde digniss - 2020</p>
+                <div class="sleep-poster" data-switch="3">
+                    <img src="">
+                </div>
+                <div class="sleep-description">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+
+
+        <div class="col-md-3">
+            <div class="sleep-poster" data-switch="4">
+                <img src="">
+            </div>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
             </div>
         </div>
+        <div class="col-md-3">
+            <div class="sleep-poster" data-switch="5">
+                <img src="">
+            </div>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="sleep-poster" data-switch="6">
+                <img src="">
+            </div>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="sleep-poster" data-switch="7">
+                <img src="">
+            </div>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="sleep-poster" data-switch="8">
+                <img src="">
+            </div>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="sleep-poster" data-switch="9">
+                <img src="">
+            </div>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="sleep-poster" data-switch="10">
+                <img src="">
+            </div>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="sleep-poster" data-switch="11">
+                <img src="">
+            </div>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="sleep-poster" data-switch="12">
+                <img src="">
+            </div>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        </div>
     </div>
-        
-        <div class="toggle" onclick="toggleMenu()"></div>
-        
-    
+
         <div id="aplayer"></div>
     </body>
     </html>

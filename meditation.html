@@ -3,24 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- APlayer CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <title>Demal</title>
-    <link rel="stylesheet" href="style.css" />
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
-    <script
-      src="https://kit.fontawesome.com/baab7691f8.js"
-      crossorigin="anonymous"
-    ></script>
+    <script  src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://kit.fontawesome.com/baab7691f8.js" crossorigin="anonymous"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+    <script   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script  src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script  src="./js/index.js"></script>
     <script defer src="./js/firebase.js"></script>
+    <script defer src="./js/aplayer.js"></script>
+    <script defer src="./js/meditation_firebase.js"></script>
   </head>
 
   <body>
     <div class="header">
       <a href="index.html"><h2>Demal</h2></a>
       <a href="#login"><h3>Логин</h3></a>
+      <div class="toggle" onclick="toggleMenu()"></div>
     </div>
     <div class="navigation">
       <ul>
@@ -63,19 +72,136 @@
       </ul>
     </div>
 
-    <div class="toggle" onclick="toggleMenu()"></div>
-    <video id="videoBG" autoplay muted loop>
+    <video id="bg_meditation" autoplay muted loop>
       <source src="bg_video/170724_15_Setangibeach.mp4" type="video/mp4" />
     </video>
+    <div class="container-fluid">
+      <div class="row" style="margin-left: 260px;">
+          <div class="col-md-3">
+              <div class="meditation-poster" data-switch="0">
+                  <img src="">
+              </div>
+              <div class="meditation-description">
+                  <h4></h4>
+                  <p></p>
+              </div>
+          </div>
+          <div class="col-md-3">
+            <div class="meditation-poster" data-switch="1">
+              <img src="">
+          </div>
+              <div class="meditation-description">
+                  <h4></h4>
+                  <p></p>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="meditation-poster" data-switch="2">
+                  <img src="">
+              </div>
+              <div class="meditation-description">
+                  <h4></h4>
+                  <p></p>
+              </div>
+          </div>
 
-    <div class="container">
-      <div class="imgBx">
-        <img src="card_photo/nature.jpg" alt="Avatar" />
+          <div class="col-md-3">
+              <div class="meditation-poster" data-switch="3">
+                  <img src="">
+              </div>
+              <div class="meditation-description">
+                  <h4></h4>
+                  <p></p>
+              </div>
+          </div>
+
+
+        <div class="col-md-3">
+            <div class="meditation-poster" data-switch="4">
+              <img src="">
+            </div>
+            <div class="meditation-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="meditation-poster" data-switch="5">
+              <img src="">
+            </div>
+            <div class="meditation-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="meditation-poster" data-switch="6">
+                  <img src="">
+            </div>
+            <div class="meditation-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="meditation-poster" data-switch="7">
+                  <img src="">
+            </div>
+            <div class="meditation-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="meditation-poster" data-switch="8">
+              <img src="">
+            </div>
+            <div class="meditation-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <!-- <div class="col-md-3">
+            <a href="#" class="album-poster" data-switch="9">
+                <img src="">
+            </a>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a href="#" class="album-poster" data-switch="10">
+                <img src="">
+            </a>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a href="#" class="album-poster" data-switch="11">
+                <img src="">
+            </a>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a href="#" class="album-poster" data-switch="12">
+                <img src="">
+            </a>
+            <div class="sleep-description">
+                <h4></h4>
+                <p></p>
+            </div>
+        </div> -->
       </div>
+   </div>
 
-      <audio class="audio" controls="controls">
-        <source class="meditate" src="" type="audio/mp3" />
-      </audio>
-    </div>
+    <div id="aplayer"></div>
+
   </body>
 </html>
