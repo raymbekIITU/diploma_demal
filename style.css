@@ -22,10 +22,10 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
   /* overflow: hidden; */
 }
-.header a h3 {
+.auth h3 {
   color: white;
   position: absolute;
-  right: 60px;
+  right: 20px;
   top: 10px;
   padding: 7px 20px;
   border-radius: 20px;
@@ -36,7 +36,7 @@ body {
   font-family: cursive;
 }
 
-.header a h3:hover {
+.auth h3:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -123,8 +123,9 @@ body {
   right: 0;
   width: 60px;
   height: 60px;
-  background: rgba(0, 0, 0, 0.25);
+  /* background: rgba(0, 0, 0, 0.25); */
   cursor: pointer;
+  display: none;
 }
 
 .toggle:active {
@@ -132,6 +133,7 @@ body {
 }
 
 .toggle:before {
+  /* display: none; */
   content: "\f0c9";
   font-family: fontAwesome;
   position: absolute;
@@ -154,7 +156,6 @@ body {
   height: auto;
 }
 
-
 img {
   width: 210px;
   height: 250px;
@@ -164,18 +165,19 @@ p {
   font-size: 17px;
   color: white;
 }
+
 h4 {
   font-size: 16px;
   text-transform: uppercase;
   margin-top: 15px;
   font-weight: 700;
   color: white;
+  /* text-align: left; */
 }
 
 .col-md-3 {
   margin-top: 70px;
   max-height: 280px;
-  text-align: center;
 }
 
 .sleep-poster {
@@ -429,6 +431,12 @@ transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
 
 @media (max-width: 767px) {
+  .toggle {
+    display: block;
+  }
+  .auth h3 {
+    right: 60px;
+  }
   .navigation {
     left: -250px;
   }

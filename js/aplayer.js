@@ -6,6 +6,7 @@ $(".sleep-poster").on("click", function (e) {
   $("#aplayer").addClass("showPlayer");
 });
 
+
 $(".meditation-poster").on("click", function (e) {
   let dataSwitchId = $(this).attr("data-switch");
   ap.list.switch(dataSwitchId);
