@@ -12,19 +12,4 @@ const firebaseConfig = {
 
   const firebaseApp = firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
-  const auth = firebase.auth();
-  // const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-  // function handleAuth() {
-  //   auth.signInWithPopup(googleProvider)
-  //   .then((result) => {
-  //     console.log(result);
-  //   })
-  //   .catch(function(error)  {
-  //     console.log(error)
-  //   })
-  // }
-
-  // const login = document.querySelector("#login");
-
-  // login.addEventListener("click", handleAuth);

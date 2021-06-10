@@ -16,19 +16,20 @@ function createUser() {
         firebase.auth().createUserWithEmailAndPassword(email,password).then(
             function () {
                 //this function executes when account is successfully created
-                window.location="index.html";
+                // window.location="index.html";
+                alert("Account successfully created!")
 
         }).catch(function (error) {
            //this function handles errors
             var errorMessage=error.message;
-            console.log(errorMessage);
+            alert(errorMessage);
         });
 
     }
     else
     {
         //alert when password did not matches
-        console.log("password does not matches");
+        alert("password does not matches");
 
     }
 
