@@ -9,10 +9,11 @@ function loginUser() {
     firebase.auth().signInWithEmailAndPassword(email,password).then(function () {
         //this function works when login successfully
 
-        window.location="index.html";
+        // window.location="index.html";
+        alert("Login successfully")
     }).catch(function (error) {
        //this will handle error
         let errorMessage=error.message;
-        console.log(errorMessage);
+        alert(errorMessage);
     });
 }

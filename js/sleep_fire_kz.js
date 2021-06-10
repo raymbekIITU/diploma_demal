@@ -7,33 +7,30 @@ const sleep_images = document.querySelectorAll(".sleep-poster img");
 const story_names = document.querySelectorAll(".sleep-description h4");
 const story_authors = document.querySelectorAll(".sleep-description p");
 const sleep_bgvideo = document.getElementById("bg_sleep");
-const sleepList = [];
 
+const kazSleepList = [];
 
-db.collection("sleeps")
+db.collection("sleeps_kaz")
 .get()
 .then((snapshot) => snapshot.docs.map((doc) => doc.data()))
 .then((data) => {
     for (let i = 0; i < data.length; i++) {
-      sleepList.push({
-        name: data[i].sleepName,
-        artist: data[i].author,
+      kazSleepList.push({
+        name: data[i].name,
+        artist: "Автор",
         url: data[i].audioUrl,
-        cover: data[i].backgroundImage,
+        cover: data[i].bgImage,
       })
-      sleep_images[i].src = data[i].backgroundImage;
-      story_names[i].innerText = data[i].sleepName;
-      story_authors[i].innerText = data[i].author;
+      sleep_images[i].src = data[i].bgImage;
+      story_names[i].innerText = data[i].name;
     }
 
     ap = new APlayer({
     container: document.getElementById("aplayer"),
     listFolded: true,
-    audio: sleepList,
+    audio: kazSleepList,
   });
 })
-
-
 
 sleep_bgvideo.src = localStorage.getItem("scene_bg");
 

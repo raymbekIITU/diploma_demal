@@ -17,7 +17,7 @@ db.collection("scenes")
 .then((data) => {
     for (let i = 0; i < data.length; i++) {
       scene_images[i].src = data[i].backgroundImage;
-      scene_names[i].innerText = data[i].title;
+      scene_names[i].innerText = data[i].title_kaz;
       bgVideo[i] = data[i].backgroundVideo;
     }
 })
